@@ -1,0 +1,25 @@
+<div class="back-container">
+    <%= link_to "◄ Back", "/" %>
+</div>
+
+<h1>My account</h1>
+<span class=menu-item><%= link_to "Logout", destroy_user_session_path(), method: :delete %></span>
+<ul>
+    <li>
+      <%= current_user.name %>
+    </li>
+    <li>
+        <%= current_user.phone_number %>
+    </li>
+    <li>
+        <%= current_user.address %>
+    </li>
+    <li>
+        <%= current_user.email %>
+    </li>
+    <li>
+        Php <%= current_user.balance %>
+    </li>
+      
+      
+</ul>
