@@ -1,0 +1,13 @@
+<h1>My account</h1>
+
+<ul>
+  <% @user.each do |u| %>
+    <li>
+      <%= u.name %>
+      <%= u.phone_number %>
+      <%= u.address %>
+      <%= u.email %>
+      <%= u.balance %>
+    </li>
+  <% end %>
+</ul>
