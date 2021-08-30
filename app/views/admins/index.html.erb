@@ -1,0 +1,10 @@
+<span class=menu-item><%= link_to "Logout", destroy_user_session_path(), method: :delete %></span>
+<h1> Admin Page </h1>
+
+<%= link_to "View Transactions", all_transactions_url %>
+
+<%= link_to "Order List", orders_url %>
+
+<%= link_to "Transaction Status", transaction_status_url %>
+
+<%= link_to "Upload a Nendo", upload_nendo_url %>
