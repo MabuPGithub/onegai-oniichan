@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_27_122838) do
+ActiveRecord::Schema.define(version: 2021_08_28_044506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "nendoroids", force: :cascade do |t|
+    t.string "name"
+    t.integer "nendoroid_number"
+    t.string "series"
+    t.string "simple_description"
+    t.text "description"
+    t.decimal "price"
+    t.date "release_date"
+    t.decimal "pre_order_price"
+    t.date "pre_order_date"
+    t.date "eta"
+    t.decimal "min_deposit"
+    t.boolean "availability"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_08_27_122838) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "address"
     t.decimal "balance", default: "0.0"
     t.index ["email"], name: "index_users_on_email", unique: true

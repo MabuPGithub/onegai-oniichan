@@ -1,0 +1,2 @@
+class Nendoroid < ApplicationRecord
+end
