@@ -24,7 +24,7 @@
     <td><strong><%= user.name %></strong></td>
     <td><strong><%= user.email %></td>
     <td><strong><%= user.balance %></td>
-    <td><strong>View user</td>
+    <td><strong><a href="<%= admin_path(user) %>">View User</a></td>
   </tr>
   <% end %>
 </table>
