@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     end
 
     def nendoroids
-      
+      @nendos = Nendoroid.all
     end
     
     private

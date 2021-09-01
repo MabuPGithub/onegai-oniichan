@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/all-transactions' => 'admins#all_transactions', as: 'all_transactions'
   get '/transaction-status' => 'admins#transaction_status', as: 'transaction_status'
   get '/orders' => 'admins#orders', as: 'orders'
-  get '/upload-nendo' => 'admins#upload_nendo', as: 'upload_nendo'
+  post '/upload-nendo' => 'admins#create', as: 'upload_nendo'
 
   get "/", to: "users#index", :as => :user_root
   get "/admins", to: "admins#index", :as => :admin_root

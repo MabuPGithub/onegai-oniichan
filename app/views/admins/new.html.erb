@@ -1,0 +1,81 @@
+<div class="back-container">
+    <%= link_to "◄ Back", "/admins" %>
+  </div>
+<h1 id="pending-h1">Upload Nendoroid</h1>
+
+<%= form_with scope: :nendoroid, url: upload_nendo_path do |f| %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :nendoroid_number %><br />
+    <%= f.number_field :nendoroid_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :series %><br />
+    <%= f.text_field :series %>
+  </div>
+
+  <div class="field">
+    <%= f.label :simple_description %><br />
+    <%= f.text_field :simple_description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :release_date %><br />
+    <%= f.date_field :release_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pre_order_price %><br />
+    <%= f.number_field :pre_order_price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pre_order_date %><br />
+    <%= f.date_field :pre_order_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :eta %><br />
+    <%= f.date_field :eta %>
+  </div>
+
+  <div class="field">
+    <%= f.label :min_deposit %><br />
+    <%= f.number_field :min_deposit %>
+  </div>
+
+  <div class="field">
+    <%= f.label(:availability, "Availability") %><br />
+    <%= f.check_box(:availability, {}, true, false) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :main_photo %><br />
+    <%= f.file_field :main_photo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photos %><br />
+    <%= f.file_field :photos, multiple: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
