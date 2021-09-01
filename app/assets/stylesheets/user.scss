@@ -1,0 +1,34 @@
+// Card css
+  .card {
+    font-family: "メイリオ",Meiryo, Arial, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", osaka, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 25%;
+    border-radius: 5px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+  }
+  
+  .card-container {
+    padding: 2px 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .vl {
+    border-left: 6px solid orange;
+    height: 50px;
+    margin: 5px;
+  }
+
+// Main CSS
+body{
+    font-family: "メイリオ",Meiryo, Arial, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", osaka, sans-serif;
+}

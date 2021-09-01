@@ -1,12 +1,16 @@
 <div class="back-container">
-    <%= link_to "◄ Back", "/" %>
-  </div>
+  <%= link_to "◄ Back", "/" %>
+</div>
+
 <h1 id="pending-h1">Nendoroids</h1>
 
 <% @nendos.each do |nendo| %>
-<%= image_tag nendo.main_photo %>
-
-<% nendo.photos.each do |np| %>
-<%= image_tag np %>
-<% end %>
+  <div class="card">
+    <%= image_tag nendo.main_photo %>
+    <div class="card-container">
+    <div class="vl"></div>
+      <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
+      <span><%= nendo.name %><span>
+    </div>
+  </div>
 <% end %>
