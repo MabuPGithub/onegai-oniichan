@@ -2,3 +2,11 @@
     <%= link_to "◄ Back", "/" %>
   </div>
 <h1 id="pending-h1">Nendoroids</h1>
+
+<% @nendos.each do |nendo| %>
+<%= image_tag nendo.main_photo %>
+
+<% nendo.photos.each do |np| %>
+<%= image_tag np %>
+<% end %>
+<% end %>
