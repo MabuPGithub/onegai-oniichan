@@ -2,3 +2,14 @@
     <%= link_to "◄ Back", "/" %>
   </div>
 <h1 id="pending-h1">In-Stock</h1>
+
+<% @in_stock.each do |nendo| %>
+  <div class="card">
+    <%= image_tag nendo.main_photo %>
+    <div class="card-container">
+    <div class="vl"></div>
+      <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
+      <span><%= nendo.name %><span>
+    </div>
+  </div>
+<% end %>

@@ -18,6 +18,10 @@ class UsersController < ApplicationController
   def pre_orders
     @pre_orders = Nendoroid.where('release_date > ?', Time.now)
   end
+
+  def in_stock
+    @in_stock = Nendoroid.where(availability: true)
+  end
     
   private
   def user_params
