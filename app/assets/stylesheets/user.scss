@@ -28,6 +28,30 @@
     margin: 5px;
   }
 
+// Nendoroid-view
+.pd-header, h1{
+  padding: 10px;
+  max-width: fit-content;
+  background-color: orangered;
+  color: white;
+}
+
+strong{
+  color: orangered;
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+.view_nendo-container{
+  display: flex;
+}
+
+.nendo_details-container{
+  margin: 30px;
+}
+
 // Main CSS
 body{
     font-family: "メイリオ",Meiryo, Arial, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", osaka, sans-serif;

@@ -5,12 +5,14 @@
 <h1 id="pending-h1">Nendoroids</h1>
 
 <% @nendos.each do |nendo| %>
-  <div class="card">
-    <%= image_tag nendo.main_photo %>
-    <div class="card-container">
-    <div class="vl"></div>
-      <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
-      <span><%= nendo.name %><span>
+  <%= link_to view_nendo_path(nendo) do %>
+    <div class="card">
+      <%= image_tag nendo.main_photo %>
+      <div class="card-container">
+      <div class="vl"></div>
+        <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
+        <span><%= nendo.name %><span>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
