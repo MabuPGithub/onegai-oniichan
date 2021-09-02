@@ -22,6 +22,10 @@ class UsersController < ApplicationController
   def in_stock
     @in_stock = Nendoroid.where(availability: true)
   end
+
+  def view_nendo
+    @nendo = Nendoroid.find(params[:id])
+  end
     
   private
   def user_params

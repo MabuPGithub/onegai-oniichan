@@ -1,0 +1,35 @@
+<div class="back-container">
+  <%= link_to "◄ Back", "/nendoroids" %>
+</div>
+    <div class="view_nendo-container">
+        <div class="nendo_details-container">
+            <h3>Release Date: <%= @nendo.release_date %></h3>
+            <h3>Nendoroid <%= @nendo.nendoroid_number %></h3>
+            <h1 id="pending-h1"><%= @nendo.name %></h1>
+
+            <h4><%= @nendo.simple_description %></h4>
+            <p><%= @nendo.description %></p>
+
+            <hr class="solid">
+
+            <h3 class='pd-header'>Product details</h3>
+
+            <p><strong>Product Name: </strong> <%= @nendo.name %></p>
+            <p><strong>Series: </strong> <%= @nendo.series %></p>
+            <p><strong>Release Date: </strong> <%= @nendo.release_date %></p>
+            <p><strong>Pre-order starts at </strong><%= @nendo.release_date %></p>
+            <p><strong>ETA: </strong> <%= @nendo.name %></p>
+            <p><strong>Price: </strong>Php <%= @nendo.price %>0</p>
+            <p><strong>Pre-order Price: </strong>Php <%= @nendo.pre_order_price %>0</p>
+            <p><strong>Minimum Deposit: </strong>Php <%= @nendo.min_deposit %>0</p>
+        </div>
+
+        <div class="nendo_photos-container">
+            <% @nendo.photos.each do |np| %>
+                <% if np.variable? %>
+                    <%= image_tag np %>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+    

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/in-stock'  => 'users#in_stock', as: 'in_stock'
   get '/request-nendo'  => 'users#request_nendo', as: 'request_nendo'
   get '/buy-nendo'  => 'users#buy_nendo', as: 'buy_nendo'
+  get '/nendoroid/:id' => 'users#view_nendo', as: 'view_nendo'
 
   get '/admins' => 'admins#index', as: 'dashboard'
   get '/all-transactions' => 'admins#all_transactions', as: 'all_transactions'
