@@ -5,15 +5,73 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag 'logo.png' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-
   <body>
-    
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+  <!--           Nav bar               -->
+    <div class="topnav" id="myTopnav">
+      <%= link_to "Nendoroids", nendoroids_url %>
+      <div class="vl2"></div>
+      <%= link_to "Pre-Orders", pre_orders_url %>
+      <div class="vl2"></div>
+      <%= link_to "In-stock", in_stock_url %>
+      <div class="vl2"></div>
+      <% if user_signed_in? %>
+        <%= link_to "Request a Nendo", request_nendo_url %>
+        <div class="vl2"></div>
+        <%= link_to "Account", account_url(current_user) %>
+        <div class="vl2"></div>
+        <%= link_to "Shopping Cart", buy_nendo_url() %>
+        <div class="vl2"></div>
+        <%= link_to "Logout", destroy_user_session_path(), method: :delete %>
+      <% end %>
+      <% unless user_signed_in? || admin_signed_in?%>
+        <%= link_to "Login", new_user_session_path() %>
+        <%= link_to "Register", new_user_registration_path() %>
+      <% end %>
+      <% if admin_signed_in? %>
+        <%= link_to "View Transactions", all_transactions_url %>
+        <div class="vl2"></div>
+        <%= link_to "Order List", orders_url %>
+        <div class="vl2"></div>
+        <%= link_to "Transaction Status", transaction_status_url %>
+        <div class="vl2"></div>
+        <%= link_to "Upload a Nendo", new_admin_path %>
+        <div class="vl2"></div>
+        <%= link_to "Logout", destroy_admin_session_path(), method: :delete %>
+      <% end %>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  
+
+  <!--           yield              -->
+    <div class="yield-container">
+      <% if flash[:notice] %>
+        <p class="notice" id="notice-id"><%= notice %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p class="alert" id="alert-id"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+     
+    </div>
+
+    <!-- Script -->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
   </body>
 </html>
