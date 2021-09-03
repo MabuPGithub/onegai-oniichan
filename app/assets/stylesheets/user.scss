@@ -22,8 +22,13 @@
     align-items: center;
   }
 
+  span{
+    max-height: max-content;
+    text-decoration: none;
+  }
+
   .vl {
-    border-left: 6px solid orange;
+    border-left: 6px solid orangered;
     height: 50px;
     margin: 5px;
   }
@@ -54,5 +59,7 @@ hr.solid {
 
 // Main CSS
 body{
-    font-family: "メイリオ",Meiryo, Arial, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", osaka, sans-serif;
+  font-family: "メイリオ",Meiryo, Arial, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", osaka, sans-serif;
+  padding-top: 70px; 
 }
+
