@@ -1,1 +1,5 @@
-
+<div class="twitter-container">
+  <% @twitter_feed.each do |tweet| %>
+    <p><%= tweet.text %><p>
+  <% end %>
+</div>
