@@ -10,6 +10,8 @@
     <div class="vl"></div>
       <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
       <span><%= nendo.name %><span>
+      <%= button_to "Add to cart", line_items_path, params: {:id => nendo.id}, method: :post %>
+
     </div>
   </div>
 <% end %>

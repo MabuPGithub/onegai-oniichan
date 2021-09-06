@@ -25,7 +25,7 @@
         <div class="vl2"></div>
         <%= link_to "Account", account_url(current_user) %>
         <div class="vl2"></div>
-        <%= link_to "Shopping Cart", buy_nendo_url() %>
+        <%= link_to "Shopping Cart", carts_show_path() %>
         <div class="vl2"></div>
         <%= link_to "Logout", destroy_user_session_path(), method: :delete %>
       <% end %>
