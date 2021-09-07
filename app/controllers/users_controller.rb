@@ -33,6 +33,10 @@ class UsersController < ApplicationController
   def view_nendo
     @nendo = Nendoroid.find(params[:id])
   end
+
+  def order_nendo
+    @nendo = Nendoroid.find(params[:id])
+  end
     
   private
   def user_params

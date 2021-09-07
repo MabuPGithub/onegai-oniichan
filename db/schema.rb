@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_01_043428) do
+ActiveRecord::Schema.define(version: 2021_09_07_032546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,19 @@ ActiveRecord::Schema.define(version: 2021_09_01_043428) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "nendoroid_id"
+    t.string "nendoroid_name"
+    t.integer "quantity"
+    t.decimal "total_price"
+    t.boolean "deposit", default: false
+    t.string "status"
+    t.string "reason"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -87,6 +100,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_043428) do
     t.string "phone_number"
     t.string "address"
     t.decimal "balance", default: "0.0"
+    t.integer "user_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
