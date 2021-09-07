@@ -27,6 +27,11 @@ class AdminsController < ApplicationController
         @users = User.all
     end
 
+    def orders
+        @orders = Order.all.order(id: :desc)
+        @users = User.all
+    end
+
     private
     def nendoroid_params
         params.require(:nendoroid).permit(:name, :nendoroid_number, :series, 

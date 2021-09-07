@@ -32,8 +32,6 @@
         <%= link_to "Register", new_user_registration_path() %>
       <% end %>
       <% if admin_signed_in? %>
-        <%= link_to "View Transactions", all_transactions_url %>
-        <div class="vl2"></div>
         <%= link_to "Order List", orders_url %>
         <div class="vl2"></div>
         <%= link_to "Transaction Status", transaction_status_url %>
