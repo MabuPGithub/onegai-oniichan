@@ -22,6 +22,11 @@ class AdminsController < ApplicationController
         end
     end
 
+    def transaction_status
+        @orders = Order.where('status =?', 'not paid').order(id: :desc)
+        @users = User.all
+    end
+
     private
     def nendoroid_params
         params.require(:nendoroid).permit(:name, :nendoroid_number, :series, 

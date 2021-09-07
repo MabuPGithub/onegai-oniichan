@@ -2,3 +2,33 @@
     <%= link_to "◄ Back", "/admins" %>
   </div>
 <h1 id="pending-h1">Transaction Status</h1>
+
+<table id="customers">
+  <tr>
+    <th>Order Number</th>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Order made by</th>
+    <th>Status</th>
+    <th>New Status</th>
+    <th>Action</th>
+  </tr>
+  <% @orders.each do |o|%>
+  <tr>
+    <td><%= o.id %></td>
+    <td><%= o.nendoroid_name %></td>
+    <td><%= o.total_price %></td>
+    <% @users.each do |u|%>
+      <%if u.id == o.user_id%>
+        <td><%= u.name %></td>
+      <% end %>
+    <% end %>
+    <%= form_with model: @order, url: order_path(o), method: "patch" do |f| %>
+    <td><%= o.status %></td>
+    <td><%= f.select(:status, [['Paid', 'Paid'], ['Canceled', 'Canceled']]) %></td>
+    
+    <td><%= f.submit "Update" %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>

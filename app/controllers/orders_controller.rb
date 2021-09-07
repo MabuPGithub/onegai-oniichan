@@ -8,6 +8,15 @@ class OrdersController < ApplicationController
   def new
   end
 
+  def update
+    @order = Order.find(params[:id])
+    if @order.update(order_params)
+      redirect_to "/transaction-status"
+    else
+      render "/transaction-status"
+    end
+  end
+
   def create
     @order = Order.new(order_params)
       if @order.save
