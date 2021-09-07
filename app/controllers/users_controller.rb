@@ -38,6 +38,11 @@ class UsersController < ApplicationController
     @nendo = Nendoroid.find(params[:id])
   end
     
+  def account
+    @user = current_user
+    @user_orders = Order.where('user_id =?', @user.id).order(id: :asc)
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :phone_number, :balance, :address)
