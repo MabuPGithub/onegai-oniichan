@@ -6,7 +6,7 @@ class CreateOrders < ActiveRecord::Migration[6.1]
       t.integer :quantity
       t.decimal :total_price
       t.boolean :deposit, default: false
-      t.string :status
+      t.string :status, default: 'not paid'
       t.string :reason
       t.timestamps
     end

@@ -17,9 +17,22 @@
     <li>
         <%= current_user.email %>
     </li>
-    <li>
-        Php <%= current_user.balance %>
-    </li>
-      
-      
 </ul>
+
+
+<table id="customers">
+  <tr>
+    <th>Order Number</th>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Status</th>
+  </tr>
+  <% @user_orders.each do |uo|%>
+  <tr>
+    <td><%= uo.id %></td>
+    <td><%= uo.nendoroid_name %></td>
+    <td><%= uo.total_price %></td>
+    <td><%= uo.status %></td>
+  </tr>
+  <% end %>
+</table>
