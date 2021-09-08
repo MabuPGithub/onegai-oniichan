@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+  html,body {
+    margin:0;
+    padding:0;
+  }
 
  .topnav {
     display: flex;
@@ -111,4 +115,27 @@
 
 h1 {
     border-radius: 10px;
+}
+
+.footer {
+  margin-top: 50px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: orangered;
+  color: white;
+  text-align: center;
+}
+
+.footer-text{
+  padding: 15px;
+}
+
+.footer-p{
+  font-size: 15px;
+}
+
+a{
+  color: rgb(75, 75, 75);
+  text-decoration: none;
 }
