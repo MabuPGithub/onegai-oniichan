@@ -5,14 +5,12 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Balance</th>
       <th>Action</th>
     </tr>
     <% @users.each do |user| %>
     <tr>
       <td><strong><%= user.name %></strong></td>
       <td><strong><%= user.email %></td>
-      <td><strong><%= user.balance %></td>
       <td><strong><a href="<%= admin_path(user) %>">View User</a></td>
     </tr>
     <% end %>
