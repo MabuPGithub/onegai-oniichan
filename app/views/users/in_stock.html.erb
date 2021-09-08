@@ -1,16 +1,23 @@
-<div class="back-container">
+<div class="body-container">
+
+  <div class="back-container">
     <%= link_to "◄ Back", "/" %>
   </div>
-<h1 id="pending-h1">In-Stock</h1>
+  
+  <h1 id="pending-h1">In-Stock</h1>
 
-<% @in_stock.each do |nendo| %>
-  <div class="card">
-    <%= image_tag nendo.main_photo %>
-    <div class="card-container">
-    <div class="vl"></div>
-      <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
-      <span><%= nendo.name %><span>
-      <%= button_to "Order this Nendoroid", order_nendo_path, params: {:id => nendo.id}, method: :get %>
-    </div>
+  <div class="nendoroid-container">
+    <% @in_stock.each do |nendo| %>
+      <div class="nendoroid-item-container">
+        <%= image_tag nendo.main_photo, class: "nendoroid-photo"%>
+        <div class="nendoroid-item-info-container">
+          <div class="vl"></div>
+          <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
+          <span><%= nendo.name %><span>
+          <%= button_to "Order this Nendoroid", order_nendo_path, params: {:id => nendo.id}, method: :get %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+</div>

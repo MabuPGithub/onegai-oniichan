@@ -1,15 +1,24 @@
-<div class="back-container">
+<div class="body-container">
+
+  <div class="back-container">
     <%= link_to "◄ Back", "/" %>
   </div>
-<h1 id="pending-h1">Pre-Orders</h1>
 
-<% @pre_orders.each do |nendo| %>
-  <div class="card">
-    <%= image_tag nendo.main_photo %>
-    <div class="card-container">
-    <div class="vl"></div>
-      <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
-      <span><%= nendo.name %><span>
-    </div>
+  <h1 id="pending-h1">Pre-Orders</h1>
+
+  <div class="nendoroid-container">
+    <% @pre_orders.each do |nendo| %>
+      <%= link_to view_nendo_path(nendo) do %>
+        <div class="nendoroid-item-container">
+          <%= image_tag nendo.main_photo, class: "nendoroid-photo"%>
+          <div class="nendoroid-item-info-container">
+            <div class="vl"></div>
+            <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
+            <span><%= nendo.name %><span>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-<% end %>
+
+</div>
