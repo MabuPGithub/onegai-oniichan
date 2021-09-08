@@ -1,29 +1,31 @@
-<div class="back-container">
+<div class="body-container">   
+  <div class="back-container">
     <%= link_to "◄ Back", "/admins" %>
   </div>
-<h1 id="pending-h1">Orders</h1>
+  <h1 id="pending-h1">Orders</h1>
 
-<table id="customers">
-  <tr>
-    <th>Order Number</th>
-    <th>Item</th>
-    <th>Price</th>
-    <th>Order made by</th>
-    <th>Status</th>
-    <th>Created at</th>
-  </tr>
-  <% @orders.each do |o|%>
-  <tr>
-    <td><%= o.id %></td>
-    <td><%= o.nendoroid_name %></td>
-    <td><%= o.total_price %></td>
-    <% @users.each do |u|%>
-      <%if u.id == o.user_id%>
-        <td><%= u.name %></td>
+  <table id="customers">
+    <tr>
+      <th>Order Number</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Order made by</th>
+      <th>Status</th>
+      <th>Date of Transaction</th>
+    </tr>
+    <% @orders.each do |o|%>
+    <tr>
+      <td><%= o.id %></td>
+      <td><%= o.nendoroid_name %></td>
+      <td><%= o.total_price %></td>
+      <% @users.each do |u|%>
+        <%if u.id == o.user_id%>
+          <td><%= u.name %></td>
+        <% end %>
       <% end %>
+      <td><%= o.status %></td>
+      <td><%= o.created_at %></td>
+    </tr>
     <% end %>
-    <td><%= o.status %></td>
-    <td><%= time_ago_in_words(o.created_at) %> ago</td>
-  </tr>
-  <% end %>
-</table>
+  </table>
+</div>

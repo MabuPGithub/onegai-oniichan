@@ -1,38 +1,39 @@
-<div class="back-container">
-    <%= link_to "◄ Back", "/" %>
+<div class="body-container">
+  <div class="back-container">
+      <%= link_to "◄ Back", "/" %>
+  </div>
+
+  <h1>My account</h1>
+  <ul>
+      <li>
+        <%= current_user.name %>
+      </li>
+      <li>
+          <%= current_user.phone_number %>
+      </li>
+      <li>
+          <%= current_user.address %>
+      </li>
+      <li>
+          <%= current_user.email %>
+      </li>
+  </ul>
+
+
+  <table id="customers">
+    <tr>
+      <th>Order Number</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Status</th>
+    </tr>
+    <% @user_orders.each do |uo|%>
+    <tr>
+      <td><%= uo.id %></td>
+      <td><%= uo.nendoroid_name %></td>
+      <td><%= uo.total_price %></td>
+      <td><%= uo.status %></td>
+    </tr>
+    <% end %>
+  </table>
 </div>
-
-<h1>My account</h1>
-<span class=menu-item><%= link_to "Logout", destroy_user_session_path(), method: :delete %></span>
-<ul>
-    <li>
-      <%= current_user.name %>
-    </li>
-    <li>
-        <%= current_user.phone_number %>
-    </li>
-    <li>
-        <%= current_user.address %>
-    </li>
-    <li>
-        <%= current_user.email %>
-    </li>
-</ul>
-
-
-<table id="customers">
-  <tr>
-    <th>Order Number</th>
-    <th>Item</th>
-    <th>Price</th>
-    <th>Status</th>
-  </tr>
-  <% @user_orders.each do |uo|%>
-  <tr>
-    <td><%= uo.id %></td>
-    <td><%= uo.nendoroid_name %></td>
-    <td><%= uo.total_price %></td>
-    <td><%= uo.status %></td>
-  </tr>
-  <% end %>
-</table>

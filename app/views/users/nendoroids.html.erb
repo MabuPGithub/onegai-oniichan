@@ -1,18 +1,27 @@
-<div class="back-container">
-  <%= link_to "◄ Back", "/" %>
+<div class="body-container">
+  <div class="back-container">
+    <%= link_to "◄ Back", "/" %>
+  </div>
+  <h1>What is a Nendoroid?</h1>
+  <div class="nendo-intro-container">
+    <%= image_tag("nendoroid_photo.png", class: "nendoroid-series") %>
+    <p class="nendo-intro"><strong>Nendoroid (ねんどろいど nendoroido) series </strong>is a brand of plastic figures created by the Japanese Company Good Smile Company. They typically depict characters from anime, manga, or video games and are designed with a large head and smaller body to give them a cute apperance. Their faces and other body parts are exchangeable, giving them a range of different expressions and poses. The Nendoroid brand spans a variety of different products: the original 10 cm figures, smaller Nendoroid Petite figures, additional display tools known as the Nendoroid More series as well as plushes and play sets. Several video games have also been released based on Nendoroid designs.</p>
+  </div>
+
+  <h1>Nendoroids</h1>
+  <div class="nendoroid-container">
+    <% @nendos.each do |nendo| %>
+      <%= link_to view_nendo_path(nendo) do %>
+        <div class="nendoroid-item-container">
+          <%= image_tag nendo.main_photo, class: "nendoroid-photo"%>
+          <div class="nendoroid-item-info-container">
+            <div class="vl"></div>
+            <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
+            <span><%= nendo.name %><span>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>
-
-<h1 id="pending-h1">Nendoroids</h1>
-
-<% @nendos.each do |nendo| %>
-  <%= link_to view_nendo_path(nendo) do %>
-    <div class="card">
-      <%= image_tag nendo.main_photo %>
-      <div class="card-container">
-      <div class="vl"></div>
-        <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
-        <span><%= nendo.name %><span>
-      </div>
-    </div>
-  <% end %>
-<% end %>

@@ -1,40 +1,5 @@
-// Card css
-  .card {
-    font-family: "メイリオ",Meiryo, Arial, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", osaka, sans-serif;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 25%;
-    border-radius: 5px;
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  img {
-    border-radius: 5px 5px 0 0;
-    width: 100%;
-  }
-  
-  .card-container {
-    padding: 2px 16px;
-    display: flex;
-    align-items: center;
-  }
-
-  span{
-    max-height: max-content;
-    text-decoration: none;
-  }
-
-  .vl {
-    border-left: 6px solid orangered;
-    height: 50px;
-    margin: 5px;
-  }
-
 // Nendoroid-view
-.pd-header, h1{
+.pd-header, h1, h2{
   padding: 10px;
   max-width: fit-content;
   background-color: orangered;
@@ -56,17 +21,6 @@ hr.solid {
 .nendo_details-container{
   margin: 30px;
 }
-
-// Main CSS
-body{
-  font-family: "メイリオ",Meiryo, Arial, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", osaka, sans-serif;
-}
-
-// Twitter
-
-// .twitter-feed-container-title{
-
-// }
 
 .twitter-container p{
   line-height: 26px;
@@ -114,3 +68,5 @@ body{
 .twitter-body{
   display: inline;
 }
+
+

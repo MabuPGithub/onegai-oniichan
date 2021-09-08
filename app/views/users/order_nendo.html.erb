@@ -1,19 +1,21 @@
-<div class="back-container">
+<div class="body-container">
+  <div class="back-container">
     <%= link_to "◄ Back", "/" %>
   </div>
-<h1 id="pending-h1">Your Order:</h1>
+  <h1 id="pending-h1">Your Order:</h1>
 
-<table id="customers">
-  <tr>
-    <th>Item</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td><%= @nendo.name %></td>
-    <td><%= @nendo.price %></td>
-  </tr>
-</table>
+  <table id="customers">
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <td><%= @nendo.name %></td>
+      <td><%= @nendo.price %></td>
+    </tr>
+  </table>
 
-<%= button_to "Place Order", create_order_path,
-    params: {:nendoroid_id => @nendo.id, :nendoroid_name => @nendo.name, :total_price => @nendo.price, :user_id => current_user.id},
-    method: :post %>
+  <%= button_to "Place Order", create_order_path,
+      params: {:nendoroid_id => @nendo.id, :nendoroid_name => @nendo.name, :total_price => @nendo.price, :user_id => current_user.id},
+      method: :post %>
+</div>
