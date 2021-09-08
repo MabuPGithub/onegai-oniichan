@@ -1,5 +1,21 @@
-<div class="twitter-container">
+<div class="twitter-feed-container">
+  <h2 class="twitter-feed-container-title">Updates from GoodSmile US:</h2>
   <% @twitter_feed.each do |tweet| %>
-    <p><%= tweet.text %><p>
+    <div class="twitter-container">
+      <div class="twitter-header">
+        <%= image_tag("gsc_logo.jpg", class: "twitter-account-logo") %>
+        <p>GoodSmile_US</p>
+        <%= image_tag("verified.png", class: "twitter-verified-logo") %>
+        <p><a href="https://twitter.com/GoodSmile_US">@GoodSmile_US</a></p>
+      </div>
+      <div class="twitter-body">
+        <% string = tweet.text %>
+        <% splitStr = string.split(" ") %>
+        <% link = splitStr[-1] %>
+        <% splitStr.delete(link) %>
+        <p><%= splitStr.join(" ") %></p>
+        <a href="<%= link %>"><%= link %></a>
+      </div>
+    </div>
   <% end %>
 </div>
