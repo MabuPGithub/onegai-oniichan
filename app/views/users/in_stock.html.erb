@@ -14,7 +14,7 @@
           <div class="vl"></div>
           <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
           <span><%= nendo.name %><span>
-          <%= button_to "Order this Nendoroid", order_nendo_path, params: {:id => nendo.id}, method: :get %>
+          <%= button_to "🛒 Order this!", order_nendo_path, params: {:id => nendo.id}, method: :get %>
         </div>
       </div>
     <% end %>

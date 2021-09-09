@@ -14,6 +14,13 @@
       <%= link_to view_nendo_path(nendo) do %>
         <div class="nendoroid-item-container">
           <%= image_tag nendo.main_photo, class: "nendoroid-photo"%>
+          <% if Time.now < nendo.release_date %>
+            <strong class="availability">Pre-Order Now!</strong>
+          <% elsif Time.now > nendo.release_date && nendo.availability == true %>
+            <strong class="availability">Order Now!</strong>
+          <% else %>
+            <strong class="availability">Not Available!</strong>
+          <% end %>
           <div class="nendoroid-item-info-container">
             <div class="vl"></div>
             <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
