@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/transaction-status' => 'admins#transaction_status', as: 'transaction_status'
   get '/orders' => 'admins#orders', as: 'orders'
   post '/upload-nendo' => 'admins#create', as: 'upload_nendo'
+  get '/availability-status' => 'admins#availability_status', as: 'availability_status'
 
   post '/create_order' => 'orders#create', as: 'create_order'
 

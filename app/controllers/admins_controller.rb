@@ -22,6 +22,15 @@ class AdminsController < ApplicationController
         end
     end
 
+    def update
+        @nendo = Nendoroid.find(params[:id])
+        if @nendo.update(nendoroid_params)
+            redirect_to "/availability-status"
+        else
+            render "/availability-status"
+        end
+    end
+
     def transaction_status
         @orders = Order.where('status =?', 'not paid').order(id: :desc)
         @users = User.all
@@ -32,9 +41,13 @@ class AdminsController < ApplicationController
         @users = User.all
     end
 
+    def availability_status
+        @nendos = Nendoroid.all.order(nendoroid_number: :desc)
+    end
+
     private
     def nendoroid_params
-        params.require(:nendoroid).permit(:name, :nendoroid_number, :series, 
+        params.permit(:id, :name, :nendoroid_number, :series, 
                                         :simple_description, :description, :price, 
                                         :release_date, :pre_order_price, :pre_order_date, 
                                         :eta, :min_deposit, :availability, :main_photo, photos: [])
