@@ -8,16 +8,15 @@
 
   <div class="nendoroid-container">
     <% @pre_orders.each do |nendo| %>
-      <%= link_to view_nendo_path(nendo) do %>
-        <div class="nendoroid-item-container">
-          <%= image_tag nendo.main_photo, class: "nendoroid-photo"%>
-          <div class="nendoroid-item-info-container">
-            <div class="vl"></div>
-            <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
-            <span><%= nendo.name %><span>
-          </div>
+      <div class="nendoroid-item-container">
+        <%= image_tag nendo.main_photo, class: "nendoroid-photo"%>
+        <div class="nendoroid-item-info-container">
+          <div class="vl"></div>
+          <span>Nendoroid <%= nendo.nendoroid_number %><span><br>
+          <span><%= nendo.name %><span>
+          <%= button_to "Pre-Order this Nendoroid", order_nendo_path, params: {:id => nendo.id}, method: :get %>
         </div>
-      <% end %>
+      </div>
     <% end %>
   </div>
 
