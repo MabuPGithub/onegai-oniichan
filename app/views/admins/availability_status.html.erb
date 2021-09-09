@@ -1,0 +1,32 @@
+<div class="body-container">   
+    <div class="back-container">
+        <%= link_to "◄ Back", "/admins" %>
+    </div>
+    <h1 id="pending-h1">Transaction Status</h1>
+
+    <table id="customers">
+    <tr>
+        <th>Nendoroid Number</th>
+        <th>Nendoroid Name</th>
+        <th>Current Status</th>
+        <th>New Status</th>
+        <th>Action</th>
+    </tr>
+    <% @nendos.each do |n|%>
+    <tr>
+        <td><%= n.nendoroid_number %></td>
+        <td><%= n.name %></td>
+        <% if n.availability == false %>
+            <td><strong>Not Available</strong></td>
+        <% else %>
+            <td><strong>Available</strong></td>
+        <% end %>
+        <%= form_with model: @nendoroid, url: admin_path(n), method: "patch" do |f| %>
+            <td><%= f.select(:availability, [['Available', 'true'], ['Not Available', 'false']]) %></td>
+      
+            <td><%= f.submit "Update" %></td>
+        <% end %>
+    </tr>
+    <% end %>
+    </table>
+</div>

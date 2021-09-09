@@ -34,6 +34,8 @@
       <% if admin_signed_in? %>
         <%= link_to "Order List", orders_url %>
         <div class="vl2"></div>
+        <%= link_to "Availability Status", availability_status_url %>
+        <div class="vl2"></div>
         <%= link_to "Transaction Status", transaction_status_url %>
         <div class="vl2"></div>
         <%= link_to "Upload a Nendo", new_admin_path %>
