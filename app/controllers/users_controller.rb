@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+  before_action :authenticate_user!, only:[:show, :edit, :pre_orders, :in_stock, :order_nendo, :account]
   def index
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = Rails.application.credentials.twitter[:consumer_key]

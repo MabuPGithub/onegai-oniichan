@@ -4,18 +4,47 @@
             <%= link_to "◄ Back", "/admins" %>
         </div>
         <h1>User Info</h1>
+
+        <h3> Personal Information </h3>
+        <hr class="solid">    
+
         <div class="user-info-item">
-            <p>Name: <%= @user.name %></p>
+            <label>Name:</label>
+            <p class="user-infomation"><%= @user.name %></p>
         </div>
         <div class="user-info-item">
-            <p>Email: <%= @user.email %></p>
+            <label>Phone Number:</label>
+            <p class="user-infomation"><%= @user.phone_number %></p>
         </div>
         <div class="user-info-item">
-            <p>Balance: Php <%= @user.balance %></p>
+            <label>Email:</label>
+            <p class="user-infomation"><%= @user.email %></p>
         </div>
         <div class="edit-user-div">
             <%# <%= link_to "Edit User", edit_admin_path(@user.id) %>
         </div>
+
+
+        
+    <h3> <%= @user.name %>'s Orders</h3>
+    <hr class="solid">
+
+    <table id="customers">
+        <tr>
+        <th>Order Number</th>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Status</th>
+        </tr>
+        <% @user_orders.each do |uo|%>
+        <tr>
+        <td><%= uo.id %></td>
+        <td><%= uo.nendoroid_name %></td>
+        <td><%= uo.total_price %></td>
+        <td><%= uo.status %></td>
+        </tr>
+        <% end %>
+    </table>
         
     </div>
 </div>

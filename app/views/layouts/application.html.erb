@@ -17,11 +17,12 @@
     <div class="topnav" id="myTopnav">
       <%= link_to '<i class="fas fa-child"></i> Nendoroids'.html_safe, nendoroids_url %>
       
-      <%= link_to '<i class="fas fa-dolly"></i> Pre-Orders'.html_safe, pre_orders_url %>
-      
-      <%= link_to '<i class="fas fa-shopping-cart"></i> In-stock'.html_safe, in_stock_url %>
-      
       <% if user_signed_in? %>
+          
+        <%= link_to '<i class="fas fa-dolly"></i> Pre-Orders'.html_safe, pre_orders_url %>
+        
+        <%= link_to '<i class="fas fa-shopping-cart"></i> In-stock'.html_safe, in_stock_url %>
+        
         <%= link_to '<i class="fas fa-envelope-square"></i> Request a Nendo'.html_safe, request_nendo_url %>
         
         <%= link_to '<i class="fas fa-user-circle"></i> Account'.html_safe, account_url(current_user) %>
@@ -35,7 +36,7 @@
       <% if admin_signed_in? %>
         <%= link_to '<i class="fas fa-clipboard-list"></i> Orders'.html_safe, orders_url %>
        
-        <%= link_to '<i class="fas fa-list-alt"></i> Availability Status'.html_safe, availability_status_url %>
+        <%= link_to '<i class="fas fa-list-alt"></i> Availability Status'.html_safe, availability_status_path %>
         
         <%= link_to '<i class="fas fa-funnel-dollar"></i> Transaction Status'.html_safe, transaction_status_url %>
         

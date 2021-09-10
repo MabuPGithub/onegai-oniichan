@@ -2,7 +2,7 @@
     <div class="back-container">
         <%= link_to "◄ Back", "/admins" %>
     </div>
-    <h1 id="pending-h1">Transaction Status</h1>
+    <h1 id="pending-h1">Availability Status</h1>
 
     <table id="customers">
     <tr>
@@ -21,7 +21,7 @@
         <% else %>
             <td><strong>Available</strong></td>
         <% end %>
-        <%= form_with model: @nendoroid, url: admin_path(n), method: "patch" do |f| %>
+        <%= form_with scope: :nendoroid, url: admin_path(n), method: "patch" do |f| %>
             <td><%= f.select(:availability, [['Available', 'true'], ['Not Available', 'false']]) %></td>
       
             <td><%= f.submit "Update" %></td>

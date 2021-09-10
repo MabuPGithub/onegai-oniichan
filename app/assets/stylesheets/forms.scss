@@ -23,3 +23,21 @@ input[type="submit"]:active {
     transform: translateY(4px);
   }
 
+  input[type=text], input[type=email], input[type=password], input[type=number], input[type=date]
+  , input[type=file], textarea, select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .actions{
+      margin-bottom: 10px;
+  }
+
+  textarea{
+      height: 200px;
+  }

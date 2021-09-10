@@ -4,21 +4,29 @@
   </div>
 
   <h1>My account</h1>
-  <ul>
-      <li>
-        <%= current_user.name %>
-      </li>
-      <li>
-          <%= current_user.phone_number %>
-      </li>
-      <li>
-          <%= current_user.address %>
-      </li>
-      <li>
-          <%= current_user.email %>
-      </li>
-  </ul>
 
+  <h3> Personal Information </h3>
+  <hr class="solid">
+
+  <div class="account-container">
+
+    <label>Name:</label>
+    <input type="text" value='<%= current_user.name %>' disabled>
+
+    <label>Phone Number:</label>
+    <input type="text" value='<%= current_user.phone_number %>' disabled>
+
+    <label>Address:</label>
+    <input type="text" value='<%= current_user.address %>' disabled>
+
+    <label>Email:</label>
+    <input type="text" value='<%= current_user.email %>' disabled>
+
+    
+  </div>
+
+  <h3> Your Orders</h3>
+  <hr class="solid">
 
   <table id="customers">
     <tr>
