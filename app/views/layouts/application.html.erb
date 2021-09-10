@@ -9,13 +9,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
 
   <!--           Nav bar               -->
     <div class="topnav" id="myTopnav">
-      <%= link_to '<i class="fas fa-child"></i>  Nendoroids'.html_safe, nendoroids_url %>
+      <%= link_to '<i class="fas fa-child"></i> Nendoroids'.html_safe, nendoroids_url %>
       
       <% if user_signed_in? %>
           
