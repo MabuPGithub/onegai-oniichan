@@ -1,8 +1,25 @@
-.field{
-    margin: 10px;
-}
+
 
 input[type="submit"]{
-    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
     background-color: orangered;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    width: fit-content;
 }
+
+input[type="submit"]:hover {
+    background-color: rgb(201, 55, 2)
+}
+
+input[type="submit"]:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+

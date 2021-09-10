@@ -8,39 +8,40 @@
     <%= favicon_link_tag 'logo.png' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
 
   <!--           Nav bar               -->
     <div class="topnav" id="myTopnav">
-      <%= link_to "Nendoroids", nendoroids_url %>
-      <div class="vl2"></div>
-      <%= link_to "Pre-Orders", pre_orders_url %>
-      <div class="vl2"></div>
-      <%= link_to "In-stock", in_stock_url %>
-      <div class="vl2"></div>
+      <%= link_to '<i class="fas fa-child"></i> Nendoroids'.html_safe, nendoroids_url %>
+      
+      <%= link_to '<i class="fas fa-dolly"></i> Pre-Orders'.html_safe, pre_orders_url %>
+      
+      <%= link_to '<i class="fas fa-shopping-cart"></i> In-stock'.html_safe, in_stock_url %>
+      
       <% if user_signed_in? %>
-        <%= link_to "Request a Nendo", request_nendo_url %>
-        <div class="vl2"></div>
-        <%= link_to "Account", account_url(current_user) %>
-        <div class="vl2"></div>
-        <%= link_to "Logout", destroy_user_session_path(), method: :delete %>
+        <%= link_to '<i class="fas fa-envelope-square"></i> Request a Nendo'.html_safe, request_nendo_url %>
+        
+        <%= link_to '<i class="fas fa-user-circle"></i> Account'.html_safe, account_url(current_user) %>
+        
+        <%= link_to '<i class="fas fa-sign-out-alt"></i> Logout'.html_safe, destroy_user_session_path(), method: :delete %>
       <% end %>
       <% unless user_signed_in? || admin_signed_in?%>
-        <%= link_to "Login", new_user_session_path() %>
-        <%= link_to "Register", new_user_registration_path() %>
+        <%= link_to '<i class="fas fa-sign-in-alt"></i> Login'.html_safe, new_user_session_path() %>
+        <%= link_to '<i class="fas fa-user-plus"></i> Register'.html_safe, new_user_registration_path() %>
       <% end %>
       <% if admin_signed_in? %>
-        <%= link_to "Order List", orders_url %>
-        <div class="vl2"></div>
-        <%= link_to "Availability Status", availability_status_url %>
-        <div class="vl2"></div>
-        <%= link_to "Transaction Status", transaction_status_url %>
-        <div class="vl2"></div>
-        <%= link_to "Upload a Nendo", new_admin_path %>
-        <div class="vl2"></div>
-        <%= link_to "Logout", destroy_admin_session_path(), method: :delete %>
+        <%= link_to '<i class="fas fa-clipboard-list"></i> Orders'.html_safe, orders_url %>
+       
+        <%= link_to '<i class="fas fa-list-alt"></i> Availability Status'.html_safe, availability_status_url %>
+        
+        <%= link_to '<i class="fas fa-funnel-dollar"></i> Transaction Status'.html_safe, transaction_status_url %>
+        
+        <%= link_to '<i class="fas fa-upload"></i> Upload Nendo'.html_safe, new_admin_path %>
+        
+        <%= link_to '<i class="fas fa-sign-out-alt"></i> Logout'.html_safe, destroy_admin_session_path(), method: :delete %>
       <% end %>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
