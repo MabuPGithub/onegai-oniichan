@@ -34,9 +34,9 @@
       <% if admin_signed_in? %>
         <%= link_to '<i class="fa fa-clipboard"></i> Orders'.html_safe, orders_url %>
        
-        <%= link_to '<i class="fa fa-list-alt"></i> Availability Status'.html_safe, availability_status_path %>
+        <%= link_to '<i class="fa fa-list-alt"></i> Availability Status'.html_safe, availability_status_path, data: { turbolinks: false } %>
         
-        <%= link_to '<i class="fa fa-credit-card-alt"></i> Transaction Status'.html_safe, transaction_status_url %>
+        <%= link_to '<i class="fa fa-credit-card-alt"></i> Transaction Status'.html_safe, transaction_status_url, data: { turbolinks: false } %>
         
         <%= link_to '<i class="fa fa-upload"></i> Upload Nendo'.html_safe, new_admin_path %>
         

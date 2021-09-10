@@ -27,11 +27,8 @@ class AdminsController < ApplicationController
 
     def update
         @nendo = Nendoroid.find(params[:id])
-        if @nendo.update(nendoroid_params)
-            redirect_to "/availability-status"
-        else
-            render "/availability-status"
-        end
+        @nendo.update(nendoroid_params)
+        redirect_to "/availability-status"
     end
 
     def transaction_status
